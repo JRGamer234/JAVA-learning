@@ -9,12 +9,15 @@ public class SUMA {
 		Scanner teclado = new Scanner(System.in);
 		int numero1;
 		int numero2;
-		System.out.println("Introduce un número para sumar: ");
-		numero1 = teclado.next();
-		System.out.println("Introduce otro número para sumar al anterior: ");
-		numero2 = teclado.next();
+		int sumar ;
+		int restar;
 		
-		System.out.println("El resultado es: " + numero1 + numero2);
+		System.out.println("Introduce un número para sumar: ");
+		numero1 = teclado.nextInt(); 
+		System.out.println("Introduce otro número para sumar al anterior: ");
+		numero2 = teclado.nextInt();
+		int resultado = numero1 + numero2;
+		System.out.println("El resultado es: " + resultado);
 	}
 
 }
