@@ -39,7 +39,7 @@ public class Calculadora {
                 resultado = numero1 / numero2;
                 System.out.println("El resultado de la división es: " + resultado);
             } else {
-                System.out.println("Error: No se puede dividir entre cero.");
+                System.out.println("No se puede dividir entre cero");
             }
             break;
         default:
