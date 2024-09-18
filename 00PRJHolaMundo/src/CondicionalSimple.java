@@ -28,7 +28,7 @@ public class CondicionalSimple {
 		}else {
 			System.out.println("Eres menor de edad");
 		}
-		
+		teclado.close();
 	}
 
 }
