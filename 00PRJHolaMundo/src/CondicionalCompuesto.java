@@ -25,17 +25,32 @@ public class CondicionalCompuesto {
 		 * Si no, si es solo mayor de 5 mostrar "Aprobado" y si no "Suspenso"
 		**/
 		
-		int nota1;
-		int nota2;
-		int nota3;
+		int nota1 = -1;;
+		int nota2 = -1;
+		int nota3 = -1;
 		double media;
 		
+		while(nota1 < 0 || nota1 > 10 ) {
 		System.out.println("Introduce tu nota-1: ");
 		nota1 = teclado.nextInt();
-		System.out.println("Introduce tu nota-2: ");
-		nota2 = teclado.nextInt();
-		System.out.println("Introduce tu nota-3: ");
-		nota3 = teclado.nextInt();
+		if(nota1 < 0 || nota1 > 10) {
+			System.err.println("Nota incorrecta");
+		}
+		}
+		while(nota2 < 0 || nota2 > 10 ) {
+			System.out.println("Introduce tu nota-2: ");
+			nota2 = teclado.nextInt();
+			if(nota2 < 0 || nota2 > 10) {
+				System.err.println("Nota incorrecta");
+			}
+			}
+		while(nota3 < 0 || nota3 > 10 ) {
+			System.out.println("Introduce tu nota-3: ");
+			nota3 = teclado.nextInt();
+			if(nota3 < 0 || nota3 > 10) {
+				System.err.println("Nota incorrecta");
+			}
+			}
 		
 		media = ((nota1 + nota2 + nota3) / 3);
 		
