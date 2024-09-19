@@ -46,6 +46,7 @@ public class CondicionalCompuesto {
 		}else {
 			System.err.println("Suspenso");
 		}
+		System.out.println("Has sacado una media de: "+ media);
 	}
 
 }
