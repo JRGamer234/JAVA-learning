@@ -54,14 +54,20 @@ public class CondicionalCompuesto {
 		
 		media = ((nota1 + nota2 + nota3) / 3);
 		
-		if(media >= 5 && media == 10) {
-			System.out.println("Aprobado con matricula");
-		}else if(media > 5) {
-			System.out.println("Aprobado");
-		}else {
+		if(media >=5) {
+			if(media >= 9) {
+				System.out.println("Sobresaliente");
+			}else if(media >=7) {
+				System.out.println("Notable");
+			}else if(media == 6) {
+				System.out.println("Bien");
+			}else {
+				System.out.println("Suficiente");
+			}}
+		else{
 			System.err.println("Suspenso");
 		}
 		System.out.println("Has sacado una media de: "+ media);
 	}
 
-}
+	}
