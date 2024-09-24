@@ -12,23 +12,17 @@ public class CondicionalAnidado {
 
 		Scanner teclado = new Scanner(System.in);
 
-		int numero;
+		/*
+		 * int numero;
+		 * 
+		 * System.out.println("Introduce un numero: "); numero = teclado.nextInt();
+		 * 
+		 * if (numero < 10) { System.out.println("Tiene 1 cifra"); }else { if(numero <
+		 * 100) { System.out.println("Tiene 2 cifras"); }else if(numero < 1000) {
+		 * System.out.println("Tiene 3 cifras"); }else { System.err.println("ERROR"); }
+		 * }
+		 */
 
-		System.out.println("Introduce un numero: ");
-		numero = teclado.nextInt();
-
-		if (numero < 10) {
-			System.out.println("Tiene 1 cifra");
-		}else {
-			if(numero < 100) {
-				System.out.println("Tiene 2 cifras");
-			}else if(numero < 1000) {
-				System.out.println("Tiene 3 cifras");
-			}else {
-				System.err.println("ERROR");
-			}
-		}
-		
 		/**
 		 * Un postulante a un empleo, realiza un test de capacitación, se obtuvo la
 		 * siguiente información: cantidad total de preguntas que se le realizaron y la
@@ -42,28 +36,27 @@ public class CondicionalAnidado {
 		int npreguntas;
 		int correctas;
 		double media;
-		
+
 		System.out.println("Introduce el total de preguntas: ");
 		npreguntas = teclado.nextInt();
 		System.out.println("Introduce el total de preguntas correctas: ");
 		correctas = teclado.nextInt();
-		
+
 		media = (correctas * 100) / npreguntas;
-		
-		if(media >50) {
-			if(media >= 90) {
+
+		if (media > 50) {
+			if (media >= 90) {
 				System.out.println("Nivel maximo");
-			}else if(media >= 75 && media < 90) {
+			} else if (media >= 75 && media < 90) {
 				System.out.println("Nivel medio");
-			}else if(media >= 50 && media < 75) {
+			} else if (media >= 50 && media < 75) {
 				System.out.println("Nivel regular");
 			}
 		} else {
-			System.out.println("Fuera de nivel "+ media + "%");
+			System.out.println("Fuera de nivel ");
 		}
-		
-		
-		
+		System.out.println("Nota: " + media + "%");
+
 	}
 
 }
