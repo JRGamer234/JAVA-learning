@@ -59,9 +59,10 @@ public class While {
             veces++;
         }
         
-        promedio = (double) suma / 10;
+        promedio = (double) suma / veces;
         
         System.out.println("Promedio = " + promedio);
+        System.out.println("Sumatorio = " + suma);
 		
 		
 		
