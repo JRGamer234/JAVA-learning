@@ -7,6 +7,7 @@ public class DoWhile {
 
 		Scanner teclado = new Scanner(System.in);
 		
+		/*
 		int opcion = 0, num = 0;
 		
 		do {
@@ -51,9 +52,73 @@ public class DoWhile {
 			}
 		}while(opcion != 4);
 		
+		*/
 		
+		/**
+		 * Realizar un programa que acumule (sume) valores ingresados
+		 * por teclado hasta ingresar el 9999 (no sumar dicho valor,
+		 * indica que ha finalizado la carga).
+		 *  - Imprimir el valor acumulado
+		 *  - Informar si dicho valor es cero, mayor a cero o menor a cero.
+		 *
+		 * **/
+
+		int nume = 0, suma = 0;
 		
+		do {
+			
+			System.out.println("Introduce un numero: ");
+			nume = teclado.nextInt();
+			
+			if(nume != 9999) {
+				suma += nume;				
+			}
+			
+		}while(nume != 9999);
 		
+		System.out.println("Has acumulado: " + suma);
+		
+		if (suma > 0) {
+            System.out.println("Es mayor a cero.");
+        } else if (suma < 0) {
+            System.out.println("Es menor a cero.");
+        } else {
+            System.out.println("Es igual a cero.");
+        }
+		
+		/*
+		* Realizar un programa que permita ingresar el peso (en kilogramos) de piezas. El proceso termina cuando ingresamos el valor 0. Se debe informar:
+		* a) Cuántas piezas tienen un peso entre 9.8 Kg. y 10.2 Kg.?, cuántas con más de 10.2 Kg.? y cuántas con menos de 9.8 Kg.?
+		* b) La cantidad total de piezas procesadas.
+		*/
+		double peso = 0;
+		int PesoMedio = 0;
+        int PesoMayor = 0;
+        int PesoMenor = 0;
+        int total = 0;
+		do {
+			
+			System.out.print("Peso de la pieza: ");
+            peso = teclado.nextDouble();
+
+            if (peso != 0) {
+                total++;
+
+                if (peso >= 9.8 && peso <= 10.2) {
+                    PesoMedio++;
+                } else if (peso > 10.2) {
+                    PesoMayor++;
+                } else {
+                    PesoMenor++;
+                }
+            }
+			
+		}while(peso != 0);
+		
+		System.out.println("Cantidad de piezas con peso entre 9.8 Kg y 10.2 Kg: " + PesoMedio);
+        System.out.println("Cantidad de piezas con más de 10.2 Kg: " + PesoMayor);
+        System.out.println("Cantidad de piezas con menos de 9.8 Kg: " + PesoMenor);
+        System.out.println("Cantidad total de piezas procesadas: " + total);
 		
 	}
 
