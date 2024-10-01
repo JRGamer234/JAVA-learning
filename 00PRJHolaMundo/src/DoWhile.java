@@ -91,6 +91,8 @@ public class DoWhile {
 		* a) Cuántas piezas tienen un peso entre 9.8 Kg. y 10.2 Kg.?, cuántas con más de 10.2 Kg.? y cuántas con menos de 9.8 Kg.?
 		* b) La cantidad total de piezas procesadas.
 		*/
+		
+		
 		double peso = 0;
 		int PesoMedio = 0;
         int PesoMayor = 0;
@@ -119,6 +121,7 @@ public class DoWhile {
         System.out.println("Cantidad de piezas con más de 10.2 Kg: " + PesoMayor);
         System.out.println("Cantidad de piezas con menos de 9.8 Kg: " + PesoMenor);
         System.out.println("Cantidad total de piezas procesadas: " + total);
+		
 		
 	}
 
