@@ -7,6 +7,8 @@ public class multiplicar {
 
 		Scanner teclado = new Scanner(System.in);
 		
+		
+		
 		/** BUCLEFOR
 		* Programa que pide por pantalla un número
 		* y a continuación escribe la tabla de multiplicar de
@@ -62,7 +64,6 @@ public class multiplicar {
 		System.out.println(contador);
 
 		
-		
 		/** BUCLEFOREJER3
 		/**
 		 * Dibuja un cuadrado en pantalla solo haciendo uso de: System.out.println("*");
@@ -78,5 +79,7 @@ public class multiplicar {
 	            System.out.println();
 	        }
 		
+		 
+		 
 }
 }
