@@ -81,11 +81,11 @@ public class DobleBucle {
 		int alt1;
 		System.out.println("Altura: ");
 		alt1 = teclado.nextInt();
-		for (int i = 1; i <= alt1; i++) {
+		for (int i = 1; i <= alt1; i++) {//num de filas del 1 hasta alt1
             for (int j = alt1; j > i; j--) {
-                System.out.print("  ");
+                System.out.print("  ");//espacios
             }
-            for (int j = 1; j <= (2 * i - 1); j++) {
+            for (int j = 1; j <= (2 * i - 1); j++) {// aumenta los asteriscos por cada fila
                 System.out.print("* ");
             }
             System.out.println();
