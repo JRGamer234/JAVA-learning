@@ -56,10 +56,6 @@ public class DobleBucle {
 		 * Dibuja un medio triangulo que mida la altura que pedimos por teclado Ejemplo
 		 * : altura = 5 * * * * * * * * * * * * * * * * ****************
 		 */
-		
-	}
-	
-	public static void printRombo() {
 		int alt1;
 		System.out.println("Altura: ");
 		alt1 = teclado.nextInt();
@@ -81,5 +77,9 @@ public class DobleBucle {
 			}
 			System.out.println();
 		}
+	}
+	
+	public static void name(	) {
+		
 	}
 }
