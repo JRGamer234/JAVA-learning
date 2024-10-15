@@ -94,17 +94,39 @@ public class CadenaDeCaracteres {
 	        
 	        System.out.println("La frase es: " + frasemod);
 
-		/** CADENAS EJER 7
-		* Ejercicio que a partir de una cadena dada, pone en Mayuscula la primera
-		* letra detras de un Punto "." 
-		  Ejemplo: En un luga de la mancha. De .....
-		* */
+	        /** CADENAS EJER 7
+	        * Ejercicio que a partir de una cadena dada, pone en Mayuscula la primera
+	        * letra detras de un Punto "." 
+	          Ejemplo: En un luga de la mancha. De .....
+	        * */
 
 
-		/** CADENAS EJER 8
+	        /** CADENAS EJER 8
+	          Algoritmo que coloca las vocales delante y las consonantes
+	        * despues y elimina los espacios en blanco. * */
 
-		  Algoritmo que coloca las vocales delante y las consonantes
-		* despues y elimina los espacios en blanco. * */
+
+	        /** CADENAS EJER 9
+	        Cargar un String por teclado e implementar las siguientes funciones:     
+	        a) Imprimir la primera mitad de los caracteres de la cadena.  
+	        b) Imprimir el último carácter.    
+	        c) Imprimirlo en forma inversa.    
+	        d) Imprimir cada carácter del String separado con un guión.    
+	        e) Imprimir la cantidad de vocales almacenadas.
+	        * */
+
+
+	        /** CADENAS EJER 10
+	        Codifique un programa que permita cargar una oración por teclado, luego mostrar cada palabra ingresada en una línea distinta.
+
+	        Por ejemplo si cargo:
+	            La mañana está fría.
+	        Debe aparecer:
+	        La
+	        mañana
+	        está
+	        fría.
+	        * */
 	}
 
 }
