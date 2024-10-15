@@ -48,19 +48,51 @@ public class CadenaDeCaracteres {
 		(Palabra que se lee de igual manera de adelante
 		hacia atrás, que de atrás hacia delante)
 		* */
-
-
+		System.out.println("Introduce una palabra: ");
+		String palabra = teclado.next();
+		
+		int longitud = palabra.length() - 1;
+		
+		for (int i = 0; i <= longitud; i++) {
+			System.out.println(palabra.charAt(i));
+		}
+		for(int j = longitud; j >= 0; j--) {
+			System.out.println(palabra.charAt(j));
+		}
+		for(int i = 0, j = longitud; i <= longitud; i++, j--) {
+			if(palabra.charAt(i) == palabra.charAt(j)) {
+				System.out.println("Iguales "+ palabra.charAt(i) + " y " + palabra.charAt(j));
+			}else {
+				System.out.println("No iguales "+ palabra.charAt(i) + " y " + palabra.charAt(j));
+			}
+		}
 		/** CADENAS EJER 5
 		* Realizar la búsqueda de un string clave en un string fuente.
 		* Se deberá ingresar una frase o texto (fuente) y luego la clave a buscar.
 		* En caso de encontrarla, imprimir la posición, de lo contrario una leyenda.
 		* */
+		  	System.out.print("Ingresa una frase: ");
+	        String fuente1 = teclado.nextLine();
 
+	        System.out.print("Ingresa la clave: ");
+	        String clave1 = teclado.nextLine();
+	        int posicion = fuente1.indexOf(clave1);
+
+	        if (posicion != -1) {
+	            System.out.println("La clave fue encontrada en la posición: " + posicion);
+	        } else {
+	            System.out.println("La clave no fue encontrada en el texto");
+	        }
 
 		/** CADENAS EJER 6
 		* Programa que pide una cadena y sustituye las "a" por "@";
 		* */
-
+	        System.out.print("Ingresa una frase: ");
+	        String frase = teclado.nextLine();
+	        
+	        String frasemod = frase.replace('a', '@');
+	        
+	        System.out.println("La frase es: " + frasemod);
 
 		/** CADENAS EJER 7
 		* Ejercicio que a partir de una cadena dada, pone en Mayuscula la primera
