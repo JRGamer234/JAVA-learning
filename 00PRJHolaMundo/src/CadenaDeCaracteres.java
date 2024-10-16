@@ -99,7 +99,23 @@ public class CadenaDeCaracteres {
 	        * letra detras de un Punto "." 
 	          Ejemplo: En un luga de la mancha. De .....
 	        * */
-
+	        
+	        String text = teclado.nextLine();
+	        String nuevoTexto = "";
+	        
+	        for(int i = 0; i < text.length(); i++) {
+	        	if(text.charAt(i) == 46) {
+	        		nuevoTexto += text.charAt(i);
+	        		String letra = text.substring(i+2, i+2);
+	        		letra.toUpperCase();
+	        		
+	        		nuevoTexto += text.charAt(i);
+	        		nuevoTexto += text.charAt(i+1);
+	        		nuevoTexto += letra;
+	        	}else {
+	        		nuevoTexto += text.charAt(i);
+	        	}
+	        }
 
 	        /** CADENAS EJER 8
 	          Algoritmo que coloca las vocales delante y las consonantes
