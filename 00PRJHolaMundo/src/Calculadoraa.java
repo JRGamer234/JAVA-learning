@@ -16,10 +16,12 @@ public class Calculadoraa {
 		}
 		
 		public intdividir(int num1, int num2) {
-			if(num1 == 0 || num2 == 0) {
-				break;
+			if(num2 > 0) {
+				return num1 / num2;
 			}
-			return num1 / num2;
+			System.err.println("No se puede dividir por 0");
+			return -1;
+			
 		}
 	}
 
