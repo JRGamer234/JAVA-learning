@@ -12,17 +12,14 @@ public class InterfazMensajes {
     public void iniciar() {
         System.out.println("=== FORMATEADOR DE MENSAJES ===");
         
-        // Leer datos
+      
         String frase = lector.leerFrase();
         int opcion = lector.leerOpcion();
         
-        // Crear objeto mensaje
         Mensaje mensaje = new Mensaje(frase, opcion);
         
-        // Mostrar mensaje según la opción seleccionada
         mostrarMensaje(mensaje);
         
-        // Cerrar scanner
         lector.cerrar();
     }
     
