@@ -2,30 +2,70 @@ package Triangulo;
 
 public class triangulo {
 
-	public triangulo(int lado1, int lado2, int lado3) {
-		super();
-		this.lado1 = lado1;
-		this.lado2 = lado2;
-		this.lado3 = lado3;
-	}
+	public class Triangulo {
+		private double lado1;
+		private double lado2;
+		private double lado3;
+		private String tipo;
 
-	private int lado1;
-	private int lado2;
-	private int lado3;
-	
-	public int imprimirMayorLado() {
-		int mayor;
-		
-		if (lado1 > lado2 && lado1 > lado3) {
-			mayor = lado1;
-		}else if(lado2 > lado1 && lado2 >= lado3) {
-			mayor = lado2;
-		}else{
-			mayor = lado3;
+		public Triangulo(double lado1, double lado2, double lado3) {
+			this.lado1 = esLadoValido(lado1) ? lado1 : 1;
+			this.lado2 = esLadoValido(lado2) ? lado2 : 1;
+			this.lado3 = esLadoValido(lado3) ? lado3 : 1;
+			calcularTipo();
 		}
-		
-		System.out.println("El lado mayot es: "+ mayor);
-		
-	}
 
+		public double getLado1() {
+			return lado1;
+		}
+
+		public double getLado2() {
+			return lado2;
+		}
+
+		public double getLado3() {
+			return lado3;
+		}
+
+		public String getTipo() {
+			return tipo;
+		}
+
+		// Setters
+		public void setLado1(double lado1) {
+			if (esLadoValido(lado1)) {
+				this.lado1 = lado1;
+				calcularTipo();
+			}
+		}
+
+		public void setLado2(double lado2) {
+			if (esLadoValido(lado2)) {
+				this.lado2 = lado2;
+				calcularTipo();
+			}
+		}
+
+		public void setLado3(double lado3) {
+			if (esLadoValido(lado3)) {
+				this.lado3 = lado3;
+				calcularTipo();
+			}
+		}
+
+		// Métodos privados
+		private boolean esLadoValido(double lado) {
+			return lado > 0;
+		}
+
+		private void calcularTipo() {
+			if (lado1 == lado2 && lado2 == lado3) {
+				tipo = "Equilátero";
+			} else if (lado1 == lado2 || lado2 == lado3 || lado1 == lado3) {
+				tipo = "Isósceles";
+			} else {
+				tipo = "Escaleno";
+			}
+		}
+	}
 }
