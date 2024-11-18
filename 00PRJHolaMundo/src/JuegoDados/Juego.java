@@ -15,12 +15,14 @@ public class Juego {
 		
 		mi_Juego = new Juego();
 		result = dado1.getvalor() + dado2.getvalor();
-		if(result > 8) {
+		dado1.imprimir();
+		dado2.imprimir();
+		/*if(result >= 8) {
 			System.out.println("Has ganado");
 		}else {
 			System.out.println("Has perdido");
-		}
-		
+		}*/
+		System.out.println(result >= 8 ? "Has ganado" : "Has perdido");		
 	}
 
 }
