@@ -1,0 +1,4 @@
+INDEX VERSION 1.134+C:\Users\jorge.ramos.gomez_al\Desktop\ExamenJava\.metadata\.plugins\org.eclipse.jdt.core
+3803894794.index
+1865797976.index
+2779382518.index

@@ -1,0 +1,24 @@
+package src;
+
+import java.util.Scanner;
+
+public class Ejercicio5 {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		
+		int num;
+		
+		System.out.println("Introduce un numero");
+		num = sc.nextInt();
+		Ejercicio5e esMult7y5 = new Ejercicio5e();
+		
+		if(num.esMult7y5) {
+			System.out.println("El número "+ num + " es múltiplo de 5 y 7.");
+		}else {
+			System.out.println("No es multiplo.");
+		}
+		
+	}
+	
+}

@@ -1,0 +1,24 @@
+package src;
+
+public class Ejercicio1 {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		
+		String signo = "";
+		
+		System.out.println("Cuál es tu horóscopo?(Válidas: Aries, Tauro, Geminis) ");
+		signo = sc.nexLine();
+		
+		if(signo = "Aries") {
+			System.out.println("21 de marzo al 19 de abril.");
+		}else if(signo = "Tauro") {
+			System.out.println("20 de abril al 20 de mayo.");
+		}else if(signo = "Geminis") {
+			System.out.println("21 de junio al 22 de julio.");
+		}else {
+			System.out.println("ERROR, no has puesto bien el horóscopo.");
+		}
+	}
+
+}

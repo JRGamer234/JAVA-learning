@@ -1,0 +1,19 @@
+package src;
+
+import java.util.Scanner;
+
+public class Ejercicio4 {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+
+		System.out.println("Introduce una frase: ");
+		String frase = sc.nextLine();
+		
+		frase. this.charAt(g) == ch;
+		
+		System.out.println(frase);
+
+	}
+
+}
