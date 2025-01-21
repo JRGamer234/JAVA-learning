@@ -5,12 +5,10 @@ package T2;
 
 public class primitiva {
  public static void main(String[] args) {
-     // Crear array de 6 posiciones
+     
      int[] numerosPremiados = new int[6];
      
-     // Llenar el array con números aleatorios
      for (int i = 0; i < numerosPremiados.length; i++) {
-         // Generar número aleatorio
          int numeroAleatorio;
          boolean repetido;
          
@@ -19,14 +17,13 @@ public class primitiva {
              numeroAleatorio = (int)(Math.random() * 49) + 1;
              
              // Comprobar si el número está repetido
-             repetido = false;
+             repetido = true;
              for (int j = 0; j < i; j++) {
                  if (numerosPremiados[j] == numeroAleatorio) {
-                     repetido = true;
-                     break;
+                     repetido = false;
                  }
              }
-         } while (repetido);
+         } while (!repetido);
          
          numerosPremiados[i] = numeroAleatorio;
      }
