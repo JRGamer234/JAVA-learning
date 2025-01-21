@@ -1,4 +1,4 @@
-package T2;
+package T2.Primitiva;
 
 public class PrimitivaMain {
 	

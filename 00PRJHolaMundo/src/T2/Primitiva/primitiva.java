@@ -1,4 +1,4 @@
-package T2;
+package T2.Primitiva;
 //Necesitamos un array de tamaño 6 para almacenar los numeros de la primitiva
 //Estos se generan de forma aleatoria ( NO SE PUEDEN REPETIR )
 //Y quierp que se impriman separados por guiones
