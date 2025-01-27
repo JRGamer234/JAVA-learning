@@ -6,7 +6,7 @@ public class Ejer2 {
 	
 	public static void Sueldos() {
 		
-java.util.Scanner scanner = new java.util.Scanner(System.in);
+java.util.Scanner sc = new java.util.Scanner(System.in);
 	    
 	    float[] sueldosm = new float[4];
 	    float[] sueldost = new float[4];
@@ -18,7 +18,7 @@ java.util.Scanner scanner = new java.util.Scanner(System.in);
 	    System.out.println("#####################\n");
 	    for(int i = 0; i < 4; i++) {
 	        System.out.println("Sueldo persona " + (i+1) + ":");
-	        sueldosm[i] = scanner.nextFloat();
+	        sueldosm[i] = sc.nextFloat();
 	        sumam += sueldosm[i];
 	    }
 	    
@@ -27,7 +27,7 @@ java.util.Scanner scanner = new java.util.Scanner(System.in);
 	    System.out.println("####################\n");
 	    for(int i = 0; i < 4; i++) {
 	        System.out.println("Sueldo persona " + (i+1) + ":");
-	        sueldost[i] = scanner.nextFloat();
+	        sueldost[i] = sc.nextFloat();
 	        sumat += sueldost[i];
 	    }
 	    
