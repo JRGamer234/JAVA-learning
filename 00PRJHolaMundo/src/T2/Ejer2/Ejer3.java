@@ -2,7 +2,7 @@ package T2.Ejer2;
 
 public class Ejer3 {
 
-	public static void Vectores() {
+	public void Vectores() {
 		java.util.Scanner sc = new java.util.Scanner(System.in);
 	        int[] vector1 = new int[4];
 	        int[] vector2 = new int[4];

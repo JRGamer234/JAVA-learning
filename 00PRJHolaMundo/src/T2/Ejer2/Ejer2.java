@@ -4,7 +4,7 @@ public class Ejer2 {
 
 	
 	
-	public static void Sueldos() {
+	public void Sueldos() {
 		
 java.util.Scanner sc = new java.util.Scanner(System.in);
 	    
