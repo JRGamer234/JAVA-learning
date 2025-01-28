@@ -39,7 +39,9 @@ public class Ejer3 {
 		//enteros de 4 elementos. Obtener la suma de los dos vectores,
 		//dicho resultado guardarlo en un tercer vector del mismo tamaño.
 		//Sumar componente a componente.
+		
 		Ejer3 a = new Ejer3();
+		
 		a.Vectores();
 		        
 		   

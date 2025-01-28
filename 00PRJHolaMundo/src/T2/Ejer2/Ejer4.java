@@ -27,8 +27,8 @@ public class Ejer4 {
 		 // 100 y 200 incluidos.
 		 
 		 //  Ejemplo: 102,178,126,.......
-		
-		numAlea();
+		Ejer4 n = new Ejer4();
+		n.numAlea();
 	}
 
 }
