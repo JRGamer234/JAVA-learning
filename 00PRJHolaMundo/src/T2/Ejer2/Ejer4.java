@@ -2,7 +2,7 @@ package T2.Ejer2;
 
 public class Ejer4 {
 
-	public static void numAlea() {
+	public void numAlea() {
 		int tamano = (int)(Math.random() * 50) + 1;
         int[] numeros = new int[tamano];
         
