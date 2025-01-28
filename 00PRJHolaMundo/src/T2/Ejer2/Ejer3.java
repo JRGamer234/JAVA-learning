@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 public class Ejer3 {
 
-	public static void Vectores() {
+	public void Vectores() {
 			Scanner sc = new Scanner(System.in);
 	        int[] vector1 = new int[4];
 	        int[] vector2 = new int[4];
@@ -39,8 +39,8 @@ public class Ejer3 {
 		//enteros de 4 elementos. Obtener la suma de los dos vectores,
 		//dicho resultado guardarlo en un tercer vector del mismo tamaño.
 		//Sumar componente a componente.
-		
-		Vectores();
+		Ejer3 a = new Ejer3();
+		a.Vectores();
 		        
 		   
 		
