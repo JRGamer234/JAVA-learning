@@ -1,12 +1,13 @@
 package T2.Ejer2;
+import java.util.Scanner;
 
 public class Ejer2 {
 
 	
 	
-	public void Sueldos() {
+	public static void Sueldos() {
 		
-java.util.Scanner sc = new java.util.Scanner(System.in);
+		Scanner sc = new Scanner(System.in);
 	    
 	    float[] sueldosm = new float[4];
 	    float[] sueldost = new float[4];

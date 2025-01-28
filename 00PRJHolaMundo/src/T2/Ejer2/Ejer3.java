@@ -1,9 +1,10 @@
 package T2.Ejer2;
+import java.util.Scanner;
 
 public class Ejer3 {
 
-	public void Vectores() {
-		java.util.Scanner sc = new java.util.Scanner(System.in);
+	public static void Vectores() {
+			Scanner sc = new Scanner(System.in);
 	        int[] vector1 = new int[4];
 	        int[] vector2 = new int[4];
 	        int[] vectorSuma = new int[4];
@@ -25,9 +26,10 @@ public class Ejer3 {
 	        }
 	        
 	        System.out.println("\nVector suma:");
-	        for (int valor : vectorSuma) {
-	            System.out.print(valor + " ");
+	        for (int i = 0; i < vectorSuma.length; i++) {
+	            System.out.print(vectorSuma[i] + " ");
 	        }
+
 	}
 	
 	public static void main(String[] args) {
