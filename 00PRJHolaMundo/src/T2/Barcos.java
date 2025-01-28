@@ -8,6 +8,7 @@ public class Barcos {
 	    Scanner sc = new Scanner(System.in);
 	    int vidas = 3;
 	    int barco = (int)(Math.random() * 10) + 1;
+	    boolean ganado = false;
 
 	    while (vidas > 0) {
 	        System.out.println("Vidas: " + vidas);
@@ -16,7 +17,7 @@ public class Barcos {
 
 	        if (x == barco) {
 	            System.out.println("¡Lo has encontrado!");
-	            break;
+	            ganado = true;
 	        } else {
 	            vidas--;
 	            System.out.println("Fallaste. Te quedan " + vidas + " vidas");
@@ -24,7 +25,7 @@ public class Barcos {
 	    }
 	    
 	    if (vidas == 0) {
-	        System.out.println("Game Over. El barco estaba en " + barco);
+	        System.out.println("Perdiste. El barco estaba en " + barco);
 	    }
 	}
 	
