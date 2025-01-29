@@ -1,9 +1,6 @@
 package T2;
-
 import java.util.Scanner;
-
 public class Barcos {
-
 	public void juego() {
 	    Scanner sc = new Scanner(System.in);
 	    int vidas = 3;
@@ -23,23 +20,12 @@ public class Barcos {
 	            System.out.println("Fallaste. Te quedan " + vidas + " vidas");
 	        }
 	    }
-	    
 	    if (vidas == 0) {
 	        System.out.println("Perdiste. El barco estaba en " + barco);
 	    }
 	}
-	
-	
-	
-	
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		
 		Barcos b = new Barcos();
-		
 		b.juego();
-		
-		
 	}
-
 }
