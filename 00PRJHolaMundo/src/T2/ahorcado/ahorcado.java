@@ -10,21 +10,22 @@ public class ahorcado {
     
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+        ahorcado a = new ahorcado();
         
-        inicializarJuego("PROGRAMACION");
+        a.inicializarJuego("PROGRAMACION");
         
-        while (intentosRestantes > 0 && !palabraCompleta()) {
-            mostrarEstadoJuego();
+        while (a.intentosRestantes > 0 && !a.palabraCompleta()) {
+            a.mostrarEstadoJuego();
             System.out.print("\nIngresa una letra: ");
             char letra = scanner.nextLine().toUpperCase().charAt(0);
-            procesarIntento(letra);
+            a.procesarIntento(letra);
         }
         
-        finalizarJuego();
+        a.finalizarJuego();
         scanner.close();
     }
     
-    private static void inicializarJuego(String palabra) {
+    public void inicializarJuego(String palabra) {
         palabraSecreta = palabra.toUpperCase();
         palabraAdivinada = new char[palabraSecreta.length()];
         intentosRestantes = MAX_INTENTOS;
@@ -34,7 +35,7 @@ public class ahorcado {
         }
     }
     
-    private static void mostrarEstadoJuego() {
+    public void mostrarEstadoJuego() {
         System.out.println("\n=== AHORCADO ===");
         System.out.println("Intentos restantes: " + intentosRestantes);
         System.out.print("Palabra: ");
@@ -44,7 +45,7 @@ public class ahorcado {
         dibujarAhorcado();
     }
     
-    private static void procesarIntento(char letra) {
+    public void procesarIntento(char letra) {
         boolean acierto = false;
         
         for (int i = 0; i < palabraSecreta.length(); i++) {
@@ -60,7 +61,7 @@ public class ahorcado {
         }
     }
     
-    private static boolean palabraCompleta() {
+    public boolean palabraCompleta() {
         for (char letra : palabraAdivinada) {
             if (letra == '_') {
                 return false;
@@ -69,7 +70,7 @@ public class ahorcado {
         return true;
     }
     
-    private static void finalizarJuego() {
+    public void finalizarJuego() {
         mostrarEstadoJuego();
         if (palabraCompleta()) {
             System.out.println("\n¡Has ganado!");
@@ -78,7 +79,7 @@ public class ahorcado {
         }
     }
     
-    private static void dibujarAhorcado() {
+    public void dibujarAhorcado() {
         System.out.println("\n");
         switch (MAX_INTENTOS - intentosRestantes) {
             case 0:
