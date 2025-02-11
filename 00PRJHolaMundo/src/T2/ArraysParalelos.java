@@ -81,7 +81,7 @@ public class ArraysParalelos {
         nombres[i] = nombres[j];
         nombres[j] = tempNombre;
 
-        float tempNota = notas[i];  // Changed from double to float
+        float tempNota = notas[i];
         notas[i] = notas[j];
         notas[j] = tempNota;
     }
@@ -95,8 +95,8 @@ public class ArraysParalelos {
 
     // Calcular y mostrar la media de las notas
     public void calcularMedia() {
-        float suma = 0;  // Changed from double to float
-        for (float nota : notas) {  // Changed from double to float
+        float suma = 0; 
+        for (float nota : notas) {
             suma += nota;
         }
         System.out.println("\nNota media de la clase: " + (suma / notas.length));
