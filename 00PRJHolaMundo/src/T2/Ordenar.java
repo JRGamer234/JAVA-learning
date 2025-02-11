@@ -4,27 +4,25 @@ import java.util.Arrays;
 
 public class Ordenar {
     public static void main(String[] args) {
-        int[] numeros = {5, 2, 9, 1, 5, 6};
+        String[] paises = {"España", "Argentina", "Brasil", "Chile", "Perú"};
         
-        System.out.println("Array original: " + Arrays.toString(numeros));
+        System.out.println("Array original: " + Arrays.toString(paises));
         
-        ordenarPorSeleccion(numeros);
+        ordenarAlfabeticamente(paises);
         
-        System.out.println("Array ordenado: " + Arrays.toString(numeros));
+        System.out.println("Array ordenado: " + Arrays.toString(paises));
     }
 
-    public static void ordenarPorSeleccion(int[] array) {
+    public static void ordenarAlfabeticamente(String[] array) {
         int n = array.length;
         for (int i = 0; i < n - 1; i++) {
-            int minIndex = i;
-            for (int j = i + 1; j < n; j++) {
-                if (array[j] < array[minIndex]) {
-                    minIndex = j;
+            for (int j = 0; j < n - 1 - i; j++) {
+                if (array[j].compareTo(array[j + 1]) > 0) {
+                    String temp = array[j];
+                    array[j] = array[j + 1];
+                    array[j + 1] = temp;
                 }
             }
-            int temp = array[minIndex];
-            array[minIndex] = array[i];
-            array[i] = temp;
         }
     }
 }
