@@ -1,5 +1,14 @@
 package T2;
 
+/**
+ * EJERCICIO 1
+ * Cargar en un vector los nombres de 5 paises y en otro vector paralelo la
+ * cantidad de habitantes del mismo. Ordenar alfabéticamente e imprimir los
+ * resultados.
+ */
+
+
+
 import java.util.Arrays;
 
 public class Ordenar {
