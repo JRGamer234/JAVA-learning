@@ -43,9 +43,7 @@ public class ArrayMayorMenor {
 	
 	
     public static void main(String[] args) {
-        ArrayMayorMenor ar = ArrayMayorMenor();
         
-        ar.funcion();
         
     }
 }
