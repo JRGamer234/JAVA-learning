@@ -3,19 +3,21 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class HundirLaFlota {
-	    public static final int TAM = 5;
+	    public static final int TAM = 10;
 	    public static char[][] tablero = new char[TAM][TAM];
 	    public static int[][] barcos = new int[TAM][TAM];
 	    public static Random random = new Random();
 
 	    public static void main(String[] args) {
 	        Scanner scanner = new Scanner(System.in);
-	        inicializarTablero();
-	        colocarBarcos();
+	        HundirLaFlota h = new HundirLaFlota();
+	        
+	        h.inicializarTablero();
+	        h.colocarBarcos();
 	        System.out.println("Bienvenido a Hundir la Flota!");
 
-	        while (quedanBarcos()) {
-	            mostrarTablero();
+	        while (h.quedanBarcos()) {
+	            h.mostrarTablero();
 	            System.out.print("Introduce fila: ");
 	            int fila = scanner.nextInt();
 	            System.out.print("Introduce columna: ");
@@ -26,7 +28,7 @@ public class HundirLaFlota {
 	                continue;
 	            }
 	            
-	            if (disparar(fila, columna)) {
+	            if (h.disparar(fila, columna)) {
 	                System.out.println("¡Impacto!");
 	            } else {
 	                System.out.println("Agua.");
@@ -37,7 +39,7 @@ public class HundirLaFlota {
 	        scanner.close();
 	    }
 
-	    public static void inicializarTablero() {
+	    public void inicializarTablero() {
 	        for (int i = 0; i < TAM; i++) {
 	            for (int j = 0; j < TAM; j++) {
 	                tablero[i][j] = '~';
@@ -46,7 +48,7 @@ public class HundirLaFlota {
 	        }
 	    }
 
-	    public static void colocarBarcos() {
+	    public void colocarBarcos() {
 	        int[] tamaños = {1, 1, 1, 2, 2, 3};
 	        for (int tamaño : tamaños) {
 	            boolean colocado = false;
@@ -67,7 +69,7 @@ public class HundirLaFlota {
 	        }
 	    }
 
-	    public static boolean cabeBarco(int fila, int columna, int tamaño, boolean horizontal) {
+	    public boolean cabeBarco(int fila, int columna, int tamaño, boolean horizontal) {
 	        for (int i = 0; i < tamaño; i++) {
 	            int f = horizontal ? fila : fila + i;
 	            int c = horizontal ? columna + i : columna;
@@ -76,8 +78,10 @@ public class HundirLaFlota {
 	        return true;
 	    }
 
-	    public static boolean disparar(int fila, int columna) {
-	        if (barcos[fila][columna] > 0) {
+	    public boolean disparar(int fila, int columna) {
+	        if (tablero[fila][columna] == 'X') {
+	            return true;
+	        } else if (barcos[fila][columna] > 0) {
 	            tablero[fila][columna] = 'X';
 	            barcos[fila][columna] = 0;
 	            return true;
@@ -87,8 +91,8 @@ public class HundirLaFlota {
 	        }
 	    }
 
-	    public static void mostrarTablero() {
-	        System.out.println("  0 1 2 3 4");
+	    public void mostrarTablero() {
+	        System.out.println("  0 1 2 3 4 5 6 7 8 9");
 	        for (int i = 0; i < TAM; i++) {
 	            System.out.print(i + " ");
 	            for (int j = 0; j < TAM; j++) {
@@ -98,7 +102,7 @@ public class HundirLaFlota {
 	        }
 	    }
 
-	    public static boolean quedanBarcos() {
+	    public boolean quedanBarcos() {
 	        for (int i = 0; i < TAM; i++) {
 	            for (int j = 0; j < TAM; j++) {
 	                if (barcos[i][j] > 0) return true;
