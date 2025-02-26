@@ -99,12 +99,9 @@ public class NumerosAlertas extends JFrame {
 					}
 					
 					// Mostrar resultados en una alerta
-					String mensaje = "Números ingresados: " + total + 
-							"\nSuma: " + suma + 
-							"\nMayor: " + mayor;
+					String mensaje = "Números ingresados: " + total + "\nSuma: " + suma + "\nMayor: " + mayor;
 					
-					JOptionPane.showMessageDialog(contentPane, mensaje, 
-							"Resultados", JOptionPane.INFORMATION_MESSAGE);
+					JOptionPane.showMessageDialog(contentPane, mensaje, "Resultados", JOptionPane.INFORMATION_MESSAGE);
 					
 					// Limpiar los campos de texto
 					txt1.setText("");
@@ -113,9 +110,7 @@ public class NumerosAlertas extends JFrame {
 					txt1.requestFocus();
 					
 				} catch (NumberFormatException ex) {
-					JOptionPane.showMessageDialog(contentPane, 
-							"Por favor, ingrese números válidos en todos los campos.", 
-							"Error", JOptionPane.ERROR_MESSAGE);
+					JOptionPane.showMessageDialog(contentPane, "Por favor, ingrese números válidos en todos los campos.", "Error", JOptionPane.ERROR_MESSAGE);
 				}
 			}
 		});
