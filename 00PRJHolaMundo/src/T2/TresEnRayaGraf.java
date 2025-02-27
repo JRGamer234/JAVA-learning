@@ -20,7 +20,7 @@ public class TresEnRayaGraf extends JFrame {
     }
 
     private void inicializarGUI() {
-        // Cargar imágenes (Asegúrate de que las rutas sean correctas)
+        // Cargar imágenes
         iconoX = new ImageIcon(new ImageIcon("C:/Users/jorge/Pictures/cruz.jpg").getImage().getScaledInstance(80, 80, Image.SCALE_SMOOTH));
         iconoO = new ImageIcon(new ImageIcon("C:/Users/jorge/Pictures/circulo.png").getImage().getScaledInstance(80, 80, Image.SCALE_SMOOTH));
 
