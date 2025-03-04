@@ -43,6 +43,7 @@ public class TresEnRayaGraf extends JFrame {
             this.fila = fila;
             this.columna = columna;
         }
+        
 
         @Override
         public void actionPerformed(ActionEvent e) {
