@@ -11,6 +11,7 @@ import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.Color;
 
 public class ComisionGraf extends JFrame {
 
@@ -20,8 +21,6 @@ public class ComisionGraf extends JFrame {
 	private JTextField txtApellido;
 	private JTextField txtSueldo;
 	private JTextField txtComision;
-	private JTextField txtSueldoComision;
-	private JTextField txtNombreApellidos;
 
 	/**
 	 * Launch the application.
@@ -44,7 +43,7 @@ public class ComisionGraf extends JFrame {
 	 */
 	public ComisionGraf() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 800, 666);
+		setBounds(100, 100, 613, 664);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
@@ -95,18 +94,12 @@ public class ComisionGraf extends JFrame {
 		txtComision.setBounds(201, 308, 262, 35);
 		contentPane.add(txtComision);
 		
-		JLabel lblSueldoConComisin = new JLabel("Sueldo con Comisión");
-		lblSueldoConComisin.setFont(new Font("Algerian", Font.PLAIN, 20));
-		lblSueldoConComisin.setBounds(61, 502, 230, 48);
-		contentPane.add(lblSueldoConComisin);
-		
-		txtSueldoComision = new JTextField();
-		txtSueldoComision.setFont(new Font("Algerian", Font.PLAIN, 20));
-		txtSueldoComision.setColumns(10);
-		txtSueldoComision.setBounds(308, 502, 262, 35);
-		contentPane.add(txtSueldoComision);
-		
+		JLabel lblResultado = new JLabel("");
+		lblResultado.setFont(new Font("Algerian", Font.PLAIN, 20));
+		lblResultado.setBounds(10, 446, 579, 171);
+		contentPane.add(lblResultado);
 		JButton Enviar = new JButton("Enviar");
+		
 		Enviar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				String nombre = txtNombre.getText();
@@ -114,24 +107,20 @@ public class ComisionGraf extends JFrame {
 				int sueldo = Integer.parseInt(txtSueldo.getText());
 				int comision = Integer.parseInt(txtComision.getText());
 				
+				int suma = sueldo + comision;
 				
-				txtNombreApellidos.setText(nombre + " " + apellido);
-				txtSueldoComision.setText(String.valueOf(sueldo + comision));
+				lblResultado.setText(nombre + " " + apellido + " cobrará " + String.valueOf(suma));
+				if(suma < 1300) {
+					lblResultado.setForeground(Color.RED);
+				}else if(suma > 1300) {
+					lblResultado.setForeground(Color.GREEN);
+				}
 			}
 		});
 		Enviar.setFont(new Font("Algerian", Font.PLAIN, 20));
 		Enviar.setBounds(251, 367, 115, 48);
 		contentPane.add(Enviar);
 		
-		JLabel lblNombreYApellidos = new JLabel("Nombre y Apellidos");
-		lblNombreYApellidos.setFont(new Font("Algerian", Font.PLAIN, 20));
-		lblNombreYApellidos.setBounds(61, 447, 230, 48);
-		contentPane.add(lblNombreYApellidos);
 		
-		txtNombreApellidos = new JTextField();
-		txtNombreApellidos.setFont(new Font("Algerian", Font.PLAIN, 20));
-		txtNombreApellidos.setColumns(10);
-		txtNombreApellidos.setBounds(308, 447, 262, 35);
-		contentPane.add(txtNombreApellidos);
 	}
 }
