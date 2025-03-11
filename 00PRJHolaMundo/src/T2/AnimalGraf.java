@@ -72,7 +72,7 @@ public class AnimalGraf extends JFrame {
 		contentPane.add(lblNewLabel);
 		
 		JLabel lblfoto = new JLabel("");
-		lblfoto.setBounds(455, 22, 95, 83);
+		lblfoto.setBounds(455, 10, 104, 95);
 		contentPane.add(lblfoto);
 		
 		JComboBox ctipo = new JComboBox();
