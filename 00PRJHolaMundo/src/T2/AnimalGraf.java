@@ -12,10 +12,13 @@ import java.awt.Font;
 import javax.swing.JTextField;
 import javax.swing.JComboBox;
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.ImageIcon;
 import javax.swing.JCheckBox;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.event.ItemListener;
+import java.awt.event.ItemEvent;
 
 public class AnimalGraf extends JFrame {
 
@@ -25,6 +28,7 @@ public class AnimalGraf extends JFrame {
 	private JTextField txtdueno;
 	private JTextField txtedad;
 	private JTextField txtraza;
+	private ImageIcon[] imagenes;
 
 	/**
 	 * Formulario de ingreso animal
@@ -48,6 +52,12 @@ public class AnimalGraf extends JFrame {
 	 * Create the frame.
 	 */
 	public AnimalGraf() {
+		imagenes = new ImageIcon[4];
+		imagenes[0] = new ImageIcon("assetsimg/perro.png");
+		imagenes[1] = new ImageIcon("assetsimg/gato.png");
+		imagenes[2] = new ImageIcon("assetsimg/conejo.png");
+		imagenes[3] = new ImageIcon("assetsimg/huron.png");
+		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 834, 411);
 		contentPane = new JPanel();
@@ -61,7 +71,16 @@ public class AnimalGraf extends JFrame {
 		lblNewLabel.setBounds(33, 47, 126, 48);
 		contentPane.add(lblNewLabel);
 		
+		JLabel lblfoto = new JLabel("");
+		lblfoto.setBounds(455, 22, 95, 83);
+		contentPane.add(lblfoto);
+		
 		JComboBox ctipo = new JComboBox();
+		ctipo.addItemListener(new ItemListener() {
+			public void itemStateChanged(ItemEvent e) {
+				lblfoto.setIcon(imagenes[ctipo.getSelectedIndex()-1]);
+			}
+		});
 		ctipo.setModel(new DefaultComboBoxModel(new String[] {"perro", "gato", "conejo", "huron"}));
 		ctipo.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		ctipo.setBounds(201, 60, 200, 30);
@@ -139,5 +158,7 @@ public class AnimalGraf extends JFrame {
 		guardar.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		guardar.setBounds(532, 290, 170, 38);
 		contentPane.add(guardar);
+		
+		
 	}
 }
