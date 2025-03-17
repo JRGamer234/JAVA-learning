@@ -92,8 +92,7 @@ public class MegaVentana extends JFrame {
 		btnhola.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				String palabrahola = txthola.getText();
-		        txthola.setText(lblhola);
-		        lblhola.setText("");
+		        lblhola.setText(palabrahola);
 			}
 		});
 		btnhola.setFont(new Font("Tahoma", Font.PLAIN, 20));
