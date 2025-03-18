@@ -13,6 +13,9 @@ import javax.swing.JRadioButton;
 import javax.swing.ButtonGroup;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.Color;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 
 public class MegaVentana extends JFrame {
 
@@ -23,6 +26,7 @@ public class MegaVentana extends JFrame {
 	private JTextField txt2;
 	private final ButtonGroup buttonGroup = new ButtonGroup();
 	private final ButtonGroup buttonGroup_1 = new ButtonGroup();
+	private JTextField txtnum;
 
 	/**
 	 * Launch the application.
@@ -144,5 +148,53 @@ public class MegaVentana extends JFrame {
 		m3.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		m3.setBounds(37, 117, 142, 21);
 		panelmedidas.add(m3);
+		
+		JButton btnconvertir = new JButton("Convertir");
+		btnconvertir.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(Naranja.isSelected()) {
+					fondocolor.setBackground(Color.orange);
+				}
+				if(Azul.isSelected()) {
+					fondocolor.setBackground(Color.blue);
+				}
+				if(Verde.isSelected()) {
+					fondocolor.setBackground(Color.green);
+				}
+				if(m1.isSelected()) {
+					setBounds(100,100,800,800);
+				}
+				if(m2.isSelected()) {
+					setBounds(100,100,1200,700);
+				}
+				if(m3.isSelected()) {
+					setBounds(100,100,1200,800);
+				}
+			}
+		});
+		btnconvertir.setForeground(new Color(255, 128, 0));
+		btnconvertir.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		btnconvertir.setBounds(232, 160, 179, 180);
+		fondocolor.add(btnconvertir);
+		
+		JLabel lblNumero = new JLabel("Numero");
+		lblNumero.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		lblNumero.setBounds(48, 423, 161, 25);
+		fondocolor.add(lblNumero);
+		
+		txtnum = new JTextField();
+		txtnum.addKeyListener(new KeyAdapter() {
+			@Override
+			public void keyTyped(KeyEvent e) {
+				char codigoTecla = e.getKeyChar();
+				if(codigoTecla < 48 || codigoTecla > 59) {
+					e.consume();
+				}
+			}
+		});
+		txtnum.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		txtnum.setColumns(10);
+		txtnum.setBounds(161, 417, 185, 31);
+		fondocolor.add(txtnum);
 	}
 }
