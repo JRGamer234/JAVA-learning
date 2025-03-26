@@ -19,28 +19,21 @@ import java.util.Scanner;
 import java.util.Arrays;
 
 public class PrepExamen {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int[] array = new int[10];
-        int[][] matriz = new int[5][5];
+	private int[] array;
+	private int[][] matriz;
+	private Scanner sc;
+	
+	public PrepExamen {
+		sc = new Scanner(System.in);
+        array = new int[10];
+        matriz = new int[5][5];
         
-        llenarArray(sc, array);
-        mostrarArray(array);
-        colocarMayorAlInicio(array);
-        ordenarArrayDesc(array);
-        mostrarArray(array);
-        
-        menuMatriz(sc, matriz);
-    }
-    
-    public static void llenarArray(Scanner sc, int[] array) {
-        for (int i = 0; i < 10; i++) {
-            System.out.print("Introduce el valor " + (i + 1) + ": ");
-            array[i] = sc.nextInt();
+        for(int i = 0; i < array.length; i++) {
+        	array[i] = (int)(Math.random()*100)+1;
         }
-    }
-    
-    public static void mostrarArray(int[] array) {
+	}
+
+    public void mostrarArray(int[] array) {
         for (int i = 0; i < array.length; i++) {
             System.out.print(array[i]);
             if (i < array.length - 1) {
@@ -49,8 +42,8 @@ public class PrepExamen {
         }
         System.out.println();
     }
-    
-    public static void colocarMayorAlInicio(int[] array) {
+
+    public void colocarMayorAlInicio(int[] array) {
         int maxIndex = 0;
         for (int i = 1; i < array.length; i++) {
             if (array[i] > array[maxIndex]) {
@@ -61,8 +54,8 @@ public class PrepExamen {
         array[maxIndex] = array[0];
         array[0] = temp;
     }
-    
-    public static void ordenarArrayDesc(int[] array) {
+
+    public void ordenarArrayDesc(int[] array) {
         Arrays.sort(array);
         for (int i = 0, j = array.length - 1; i < j; i++, j--) {
             int temp = array[i];
@@ -70,8 +63,8 @@ public class PrepExamen {
             array[j] = temp;
         }
     }
-    
-    public static void menuMatriz(Scanner sc, int[][] matriz) {
+
+    public void menuMatriz(Scanner sc, int[][] matriz) {
         int opcion;
         do {
             System.out.println("\nMenú de opciones:");
@@ -84,7 +77,7 @@ public class PrepExamen {
             System.out.println("7. Salir");
             System.out.print("Seleccione una opción: ");
             opcion = sc.nextInt();
-            
+
             switch (opcion) {
                 case 1:
                     llenarMatriz(sc, matriz);
@@ -124,8 +117,8 @@ public class PrepExamen {
             }
         } while (opcion != 7);
     }
-    
-    public static void llenarMatriz(Scanner sc, int[][] matriz) {
+
+    public void llenarMatriz(Scanner sc, int[][] matriz) {
         System.out.println("Introduce los valores de la matriz:");
         for (int i = 0; i < 5; i++) {
             for (int j = 0; j < 5; j++) {
@@ -133,36 +126,36 @@ public class PrepExamen {
             }
         }
     }
-    
-    public static int sumarFila(int[][] matriz, int fila) {
+
+    public int sumarFila(int[][] matriz, int fila) {
         return Arrays.stream(matriz[fila]).sum();
     }
-    
-    public static int sumarColumna(int[][] matriz, int columna) {
+
+    public int sumarColumna(int[][] matriz, int columna) {
         int suma = 0;
         for (int i = 0; i < 5; i++) {
             suma += matriz[i][columna];
         }
         return suma;
     }
-    
-    public static int sumarDiagonalPrincipal(int[][] matriz) {
+
+    public int sumarDiagonalPrincipal(int[][] matriz) {
         int suma = 0;
         for (int i = 0; i < 5; i++) {
             suma += matriz[i][i];
         }
         return suma;
     }
-    
-    public static int sumarDiagonalInversa(int[][] matriz) {
+
+    public int sumarDiagonalInversa(int[][] matriz) {
         int suma = 0;
         for (int i = 0; i < 5; i++) {
             suma += matriz[i][4 - i];
         }
         return suma;
     }
-    
-    public static double calcularMedia(int[][] matriz) {
+
+    public double calcularMedia(int[][] matriz) {
         int sumaTotal = 0;
         for (int[] filaMatriz : matriz) {
             for (int num : filaMatriz) {
@@ -171,5 +164,20 @@ public class PrepExamen {
         }
         return (double) sumaTotal / 25;
     }
-}
 
+public static void main(String[] args) {
+        PrepExamen examen = new PrepExamen();
+        System.out.println("Array generado:");
+        examen.mostrarArray();
+        
+        examen.colocarMayorAlInicio();
+        System.out.println("\nArray con el mayor al inicio:");
+        examen.mostrarArray();
+
+        examen.ordenarArrayDesc();
+        System.out.println("\nArray ordenado de mayor a menor:");
+        examen.mostrarArray();
+
+        examen.menuMatriz();
+    }
+}
