@@ -174,7 +174,7 @@ public static void main(String[] args) {
         System.out.println("\nArray con el mayor al inicio:");
         examen.mostrarArray();
 
-        examen.ordenarArrayDesc();
+        examen.ordenar ArrayDesc();
         System.out.println("\nArray ordenado de mayor a menor:");
         examen.mostrarArray();
 
