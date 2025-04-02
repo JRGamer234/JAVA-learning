@@ -114,10 +114,6 @@ public class PracticaExamen {
 		for(int i =0; i<indice.length;i++) {
 			System.out.println("Alumno: "+ alumno[i] + " | Nota: " + notas[i] + "");
 		}
-		
-		for (int i = 0; i < indice.length; i++) {
-            System.out.print(indice[i] + " ");
-        }
 	}
 	
 	public static void main(String[] args) {
