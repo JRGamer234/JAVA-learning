@@ -102,3 +102,4 @@ public class Login extends JFrame {
 		panel.add(btnNewButton);
 	}
 }
+
