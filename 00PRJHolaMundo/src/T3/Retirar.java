@@ -7,12 +7,16 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import java.awt.FlowLayout;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
 import java.awt.Color;
 import java.awt.Font;
 import javax.swing.JComboBox;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JTextField;
 import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class Retirar extends JFrame {
 
@@ -59,12 +63,6 @@ public class Retirar extends JFrame {
 		lblNewLabel.setBounds(49, 89, 160, 52);
 		contentPane.add(lblNewLabel);
 		
-		JComboBox comboBox = new JComboBox();
-		comboBox.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		comboBox.setModel(new DefaultComboBoxModel(new String[] {"corriente", "credito"}));
-		comboBox.setBounds(213, 91, 288, 52);
-		contentPane.add(comboBox);
-		
 		JLabel lblDineroASacar = new JLabel("Dinero a retirar:");
 		lblDineroASacar.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		lblDineroASacar.setBounds(49, 151, 160, 52);
@@ -76,11 +74,6 @@ public class Retirar extends JFrame {
 		contentPane.add(txtretirar);
 		txtretirar.setColumns(10);
 		
-		JButton btnNewButton = new JButton("Retirar");
-		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		btnNewButton.setBounds(241, 229, 160, 45);
-		contentPane.add(btnNewButton);
-		
 		JLabel lblNewLabel_2 = new JLabel("Saldo:");
 		lblNewLabel_2.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		lblNewLabel_2.setBounds(49, 316, 70, 61);
@@ -90,5 +83,47 @@ public class Retirar extends JFrame {
 		lblsaldor.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		lblsaldor.setBounds(111, 319, 300, 61);
 		contentPane.add(lblsaldor);
+		
+		JComboBox comboBox = new JComboBox();
+		comboBox.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(comboBox.getSelectedIndex() == 1) {
+					lblsaldor.setText(String.valueOf(principal.saldoCorriente));
+				} else if(comboBox.getSelectedIndex() == 2) {
+					lblsaldor.setText(String.valueOf(principal.saldoCredito));
+				}
+			}
+		});
+		comboBox.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		comboBox.setModel(new DefaultComboBoxModel(new String[] {"Seleccionar Cuenta", "corriente", "credito"}));
+		comboBox.setBounds(213, 91, 288, 52);
+		contentPane.add(comboBox);
+		
+		JButton btnNewButton = new JButton("Retirar");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				int dinero = Integer.parseInt(txtretirar.getText());
+				
+				if(comboBox.getSelectedIndex() == 0) {
+					JOptionPane.showMessageDialog(null, "Seleccione una cuenta", "ERROR", 0);
+				} else if(comboBox.getSelectedIndex() == 1) {
+					if(dinero > 150) {
+						JOptionPane.showMessageDialog(null, "No se puede retirar más de 150€", "ERROR", 0);
+					}else {
+						principal.saldoCorriente -= dinero;
+						lblsaldor.setText(String.valueOf(principal.saldoCorriente));
+					}
+				} else if(dinero > 300) {
+					JOptionPane.showMessageDialog(null, "No se puede retirar más de 300€", "ERROR", 0);
+				} else {
+					principal.saldoCredito -= dinero;
+					lblsaldor.setText(String.valueOf(principal.saldoCredito));
+				}
+				
+			}
+		});
+		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		btnNewButton.setBounds(241, 229, 160, 45);
+		contentPane.add(btnNewButton);
 	}
 }

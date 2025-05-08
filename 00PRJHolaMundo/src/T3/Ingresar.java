@@ -6,6 +6,8 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
 import java.awt.Font;
 import javax.swing.JTextField;
 import javax.swing.JButton;
@@ -66,14 +68,9 @@ public class Ingresar extends JFrame {
 		txtingreso.setColumns(10);
 		
 		JLabel lblsaldoi = new JLabel("");
+		lblsaldoi.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		lblsaldoi.setBounds(125, 299, 338, 35);
 		contentPane.add(lblsaldoi);
-		
-		JComboBox descuenta = new JComboBox();
-		descuenta.setModel(new DefaultComboBoxModel(new String[] {"corriente", "credito"}));
-		descuenta.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		descuenta.setBounds(223, 99, 283, 35);
-		contentPane.add(descuenta);
 		
 		JLabel lblTipoDeCuenta = new JLabel("Tipo de cuenta:");
 		lblTipoDeCuenta.setFont(new Font("Tahoma", Font.PLAIN, 18));
@@ -85,16 +82,39 @@ public class Ingresar extends JFrame {
 		lblNewLabel_1.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		lblNewLabel_1.setBounds(147, 20, 261, 46);
 		contentPane.add(lblNewLabel_1);
+
+		JComboBox descuenta = new JComboBox();
+		descuenta.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(descuenta.getSelectedIndex() == 1) {
+					lblsaldoi.setText(String.valueOf(principal.saldoCorriente));
+				} else if(descuenta.getSelectedIndex() == 2) {
+					lblsaldoi.setText(String.valueOf(principal.saldoCredito));
+				}
+			}
+		});
+		descuenta.setModel(new DefaultComboBoxModel(new String[] {"Seleccionar Cuenta", "corriente", "credito"}));
+		descuenta.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		descuenta.setBounds(223, 99, 283, 35);
+		contentPane.add(descuenta);
 		
 		JButton btnNewButton = new JButton("ENVIAR");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				String cuenta = (String) descuenta.getSelectedItem();
 				int dinero = Integer.parseInt(txtingreso.getText());
 				
-				lblsaldoi.setText(String.valueOf(dinero));
+				if(descuenta.getSelectedIndex() == 0) {
+					JOptionPane.showMessageDialog(null, "Seleccione una cuenta", "ERROR", 0);
+					
+				} else if(descuenta.getSelectedIndex() == 1) {
+						principal.saldoCorriente += dinero;
+						lblsaldoi.setText(String.valueOf(principal.saldoCorriente));
+				}else {
+					principal.saldoCredito += dinero;
+					lblsaldoi.setText(String.valueOf(principal.saldoCredito));
+				}}
 				
-			}
+			
 		});
 		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		btnNewButton.setBounds(209, 227, 163, 46);

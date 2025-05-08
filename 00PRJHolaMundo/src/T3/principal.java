@@ -21,7 +21,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
 public class principal {
-
+	protected static int saldoCorriente = 3000, saldoCredito = 3000;
 	private JFrame frame;
 
 	/**
