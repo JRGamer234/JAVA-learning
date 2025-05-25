@@ -2,7 +2,7 @@ package Evaluacion1;
 
 import java.util.Scanner;
 
-public class examen2 {
+public class examen2A {
 
 	public void ejer1() {
 		Scanner sc = new Scanner(System.in);
@@ -87,7 +87,18 @@ public class examen2 {
 		
 		System.out.println("TRIANGULO 2\n");
 		
-		
+		int n = 5;
+
+		for (int i = 0; i < n; i++) {         // Filas
+            for (int j = 0; j < n; j++) {     // Columnas
+                if (i == n - 1 || j == 0 || i == j)
+                    System.out.print("* ");
+                else
+                    System.out.print("  ");
+            }
+            System.out.println();
+        }
+
 		
 		
 		System.out.println("ROMBO\n");
@@ -96,13 +107,26 @@ public class examen2 {
 	}
 	
 	public void ejer5() {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Introduce una frase:");
+		String frase = sc.nextLine();
+		System.out.println("Introduce letra:");
+		char letra = sc.next().charAt(0);
 		
+		int pos = 0;
+		
+		for(int i = 0; i < frase.length(); i++) {
+			if(frase.charAt(i) == letra) {
+				pos = i;
+			}
+		}
+		System.out.println(frase.substring(pos+1));
 	}
 	
 	public static void main(String[] args) {
-		examen2 e = new examen2();
+		examen2A e = new examen2A();
 		
-		e.ejer4();
+		e.ejer5();
 
 	}
 
